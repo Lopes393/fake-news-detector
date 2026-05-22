@@ -57,20 +57,34 @@ async function analyzeNews() {
                 ${data.result}
             </div>
 
-            <div class="percentage">
-                🔴 Fake News: ${data.fake_probability}%
-            </div>
+            <div class="stats">
 
-            <div class="percentage">
-                🟢 Notícia Real: ${data.true_probability}%
+                <div class="stat-card">
+                    <div class="stat-label">
+                        🔴 Fake News
+                    </div>
+
+                    <div class="stat-value">
+                        ${data.fake_probability}%
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-label">
+                        🟢 Notícia Real
+                    </div>
+
+                    <div class="stat-value">
+                        ${data.true_probability}%
+                    </div>
+                </div>
+
             </div>
 
             <div class="explanation">
-                📖 <strong>Explicação:</strong><br><br>
-                ${data.explanation}
+                📖 ${data.explanation}
             </div>
         `;
-
     } catch(error) {
 
         console.error(error);

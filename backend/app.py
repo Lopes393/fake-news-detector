@@ -73,6 +73,13 @@ def predict():
 
         content = response.choices[0].message.content
 
+        # Limpar markdown JSON
+        content = content.replace("```json", "")
+        content = content.replace("```", "")
+        content = content.strip()
+
+        print(content)
+
         # Converter resposta para JSON
         result = json.loads(content)
 
