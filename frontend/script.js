@@ -9,7 +9,11 @@ async function analyzeNews() {
 
     const resultDiv = document.getElementById("result");
 
-    resultDiv.innerHTML = "Analisando com IA...";
+    resultDiv.innerHTML = `
+        <div class="loading">
+            🧠 IA analisando notícia...
+        </div>
+    `;
 
     try {
 
@@ -33,30 +37,38 @@ async function analyzeNews() {
         if(data.error) {
 
             resultDiv.innerHTML = `
-                <p>Erro:</p>
+                <div class="result-title fake">
+                    ❌ Erro
+                </div>
+
                 <p>${data.error}</p>
             `;
 
             return;
         }
 
+        const resultClass =
+            data.result.includes("Fake")
+            ? "fake"
+            : "real";
+
         resultDiv.innerHTML = `
-            <h2>${data.result}</h2>
+            <div class="result-title ${resultClass}">
+                ${data.result}
+            </div>
 
-            <p>
-                Fake News:
-                ${data.fake_probability}%
-            </p>
+            <div class="percentage">
+                🔴 Fake News: ${data.fake_probability}%
+            </div>
 
-            <p>
-                Notícia Real:
-                ${data.true_probability}%
-            </p>
+            <div class="percentage">
+                🟢 Notícia Real: ${data.true_probability}%
+            </div>
 
-            <p>
-                <strong>Explicação:</strong><br>
+            <div class="explanation">
+                📖 <strong>Explicação:</strong><br><br>
                 ${data.explanation}
-            </p>
+            </div>
         `;
 
     } catch(error) {
@@ -64,7 +76,13 @@ async function analyzeNews() {
         console.error(error);
 
         resultDiv.innerHTML = `
-            Erro ao conectar com a API.
+            <div class="result-title fake">
+                ❌ Erro ao conectar
+            </div>
+
+            <p>
+                Não foi possível conectar com a API.
+            </p>
         `;
     }
 }
