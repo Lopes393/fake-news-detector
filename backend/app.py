@@ -1,37 +1,88 @@
 from flask import Flask, request, jsonify
-import pickle
+from flask_cors import CORS
+from openai import OpenAI
+from dotenv import load_dotenv
 
+import os
+import json
+
+# Carregar variáveis do .env
+load_dotenv()
+
+# Criar app Flask
 app = Flask(__name__)
 
-# Carregar IA treinada
-model = pickle.load(open("model.pkl", "rb"))
-vectorizer = pickle.load(open("vectorizer.pkl", "rb"))
+# Liberar CORS
+CORS(app)
+
+# Cliente OpenAI
+client = OpenAI(
+    api_key=os.getenv("OPENAI_API_KEY")
+)
 
 @app.route("/")
 def home():
-    return "API Detector de Fake News funcionando!"
+    return "API Detector de Fake News com ChatGPT funcionando!"
 
 @app.route("/predict", methods=["POST"])
 def predict():
 
-    data = request.json
-    text = data["text"]
+    try:
 
-    # Transformar texto
-    vectorized_text = vectorizer.transform([text])
+        data = request.get_json()
 
-    # Fazer previsão
-    prediction = model.predict(vectorized_text)[0]
-    probability = model.predict_proba(vectorized_text)[0]
+        text = data["text"]
 
-    fake_probability = probability[0] * 100
-    true_probability = probability[1] * 100
+        prompt = f"""
+        Você é um especialista em análise de fake news.
 
-    return jsonify({
-        "fake_probability": round(fake_probability, 2),
-        "true_probability": round(true_probability, 2),
-        "result": "Fake News" if prediction == 0 else "Notícia Real"
-    })
+        Analise a notícia abaixo.
+
+        Considere:
+        - plausibilidade
+        - coerência
+        - contexto atual
+        - linguagem alarmista
+        - ausência de fontes
+        - exageros
+        - sensacionalismo
+
+        Retorne APENAS um JSON válido neste formato:
+
+        {{
+            "result": "Fake News" ou "Provavelmente Real",
+            "fake_probability": número de 0 a 100,
+            "true_probability": número de 0 a 100,
+            "explanation": "explicação curta"
+        }}
+
+        Notícia:
+        {text}
+        """
+
+        response = client.chat.completions.create(
+            model="gpt-4.1-mini",
+            messages=[
+                {
+                    "role": "user",
+                    "content": prompt
+                }
+            ],
+            temperature=0.3
+        )
+
+        content = response.choices[0].message.content
+
+        # Converter resposta para JSON
+        result = json.loads(content)
+
+        return jsonify(result)
+
+    except Exception as e:
+
+        return jsonify({
+            "error": str(e)
+        }), 500
 
 if __name__ == "__main__":
     app.run(debug=True)
