@@ -146,7 +146,7 @@ Sistema retorna:
 ## 1️⃣ Clonar o Repositório
 
 ```bash
-git clone https://github.com/seu-usuario/fake-news-detector.git
+git clone https://github.com/Lopes393/fake-news-detector.git
 ```
 
 ---
