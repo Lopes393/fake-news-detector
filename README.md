@@ -1,118 +1,149 @@
-# Detector de Fake News com Inteligência Artificial
+# 🧠 Fake News Detector AI
 
-Sistema desenvolvido para análise automática de notícias utilizando Machine Learning, capaz de identificar a probabilidade de uma notícia ser falsa (Fake News) ou verdadeira.
+<div align="center">
+
+![Python](https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python)
+![Flask](https://img.shields.io/badge/Flask-API-black?style=for-the-badge&logo=flask)
+![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4o-green?style=for-the-badge&logo=openai)
+![JavaScript](https://img.shields.io/badge/JavaScript-Frontend-yellow?style=for-the-badge&logo=javascript)
+![HTML5](https://img.shields.io/badge/HTML5-Web-orange?style=for-the-badge&logo=html5)
+![CSS3](https://img.shields.io/badge/CSS3-Style-blue?style=for-the-badge&logo=css3)
+
+### 🚨 Sistema Inteligente de Detecção de Fake News usando IA Generativa
+
+Projeto desenvolvido para feiras científicas, apresentações tecnológicas, aprendizado de Inteligência Artificial e demonstrações de análise contextual usando modelos de linguagem avançados.
+
+</div>
 
 ---
 
-# Objetivo do Projeto
+# 📌 Sobre o Projeto
 
-O projeto tem como objetivo demonstrar o uso de:
+O **Fake News Detector AI** é um sistema web capaz de analisar notícias e identificar a probabilidade de serem falsas ou verdadeiras utilizando Inteligência Artificial Generativa.
 
-- Inteligência Artificial
-- Machine Learning
+Diferente de modelos simples de Machine Learning tradicionais, este projeto utiliza:
+
+✅ IA contextual  
+✅ Análise semântica  
+✅ Interpretação textual  
+✅ Verificação de plausibilidade  
+✅ Explicações automáticas  
+
+---
+
+# 🎯 Objetivos
+
+- Demonstrar uso de IA Generativa
+- Aplicar APIs modernas de IA
+- Trabalhar com análise textual
+- Criar uma API REST com Flask
+- Desenvolver um sistema completo Full Stack
+- Estudar detecção de Fake News
+- Integrar Front-end + Back-end + IA
+
+---
+
+# 🖼️ Demonstração
+
+## Entrada:
+
+```text
+Donald Trump é presidente dos Estados Unidos
+```
+
+## Resultado:
+
+```text
+✅ Provavelmente Real
+
+🟢 Notícia Real: 92%
+🔴 Fake News: 8%
+
+📖 Explicação:
+A afirmação é consistente com acontecimentos políticos recentes.
+```
+
+---
+
+# 🚀 Tecnologias Utilizadas
+
+## 🧠 Inteligência Artificial
+- OpenAI API
+- GPT-4o
 - Processamento de Linguagem Natural (NLP)
-- Desenvolvimento Web
-- Ciência de Dados
 
-aplicados na detecção de notícias falsas.
-
-O sistema recebe um texto digitado pelo usuário, analisa padrões linguísticos e retorna a probabilidade da notícia ser falsa ou verdadeira.
-
----
-
-# Tecnologias Utilizadas
-
-## Back-end
+## ⚙️ Back-end
 - Python
 - Flask
+- Flask-CORS
 
-## Inteligência Artificial
-- Scikit-Learn
-- TF-IDF
-- Logistic Regression
-
-## Front-end
+## 🎨 Front-end
 - HTML5
 - CSS3
 - JavaScript
 
-## Banco de Dados (Opcional)
-- SQLite
-- MySQL
+## 🔐 Segurança
+- Python Dotenv
+- Variáveis de Ambiente
 
 ---
 
-# Funcionalidades
-
-- Análise de notícias em tempo real
-- Identificação de Fake News
-- Cálculo de probabilidade
-- API REST
-- Interface Web simples e intuitiva
-- Treinamento de modelo de IA
-
----
-
-# Estrutura do Projeto
+# 🏗️ Estrutura do Projeto
 
 ```text
 fake-news-detector/
 │
 ├── backend/
 │   ├── app.py
-│   ├── train.py
-│   ├── model.pkl
-│   └── vectorizer.pkl
+│   ├── .env
+│   └── requirements.txt
 │
 ├── frontend/
 │   ├── index.html
 │   ├── style.css
 │   └── script.js
 │
-├── dataset/
-│   ├── Fake.csv
-│   └── True.csv
-│
-├── requirements.txt
+├── .gitignore
 └── README.md
 ```
 
 ---
 
-# Como Funciona
-
-## Fluxo do Sistema
+# 🧠 Como Funciona
 
 ```text
-Usuário envia notícia
+Usuário digita uma notícia
 ↓
-Texto é processado
+Front-end envia texto para Flask
 ↓
-IA transforma texto em dados numéricos
+Flask envia prompt para OpenAI
 ↓
-Modelo analisa padrões
+GPT-4o analisa contexto
 ↓
-Sistema retorna probabilidade
+Sistema retorna:
+- Probabilidade Fake
+- Probabilidade Real
+- Explicação
 ```
 
 ---
 
-# Dataset Utilizado
+# ✨ Funcionalidades
 
-O modelo foi treinado utilizando datasets públicos contendo notícias reais e falsas.
-
-## Dataset
-- Fake.csv
-- True.csv
-
-Fonte:
-https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset
+✅ Análise contextual de notícias  
+✅ IA generativa integrada  
+✅ Respostas em português  
+✅ Explicação automática da análise  
+✅ API REST  
+✅ Interface web interativa  
+✅ Comunicação Front-end + Back-end  
+✅ Sistema pronto para expansão  
 
 ---
 
-# Instalação do Projeto
+# 📦 Instalação do Projeto
 
-## 1. Clonar Repositório
+## 1️⃣ Clonar o Repositório
 
 ```bash
 git clone https://github.com/seu-usuario/fake-news-detector.git
@@ -120,7 +151,7 @@ git clone https://github.com/seu-usuario/fake-news-detector.git
 
 ---
 
-## 2. Entrar na Pasta
+## 2️⃣ Entrar na Pasta
 
 ```bash
 cd fake-news-detector
@@ -128,7 +159,7 @@ cd fake-news-detector
 
 ---
 
-## 3. Criar Ambiente Virtual
+## 3️⃣ Criar Ambiente Virtual
 
 ### Windows
 
@@ -138,17 +169,23 @@ python -m venv venv
 
 ---
 
-## 4. Ativar Ambiente Virtual
+## 4️⃣ Ativar Ambiente Virtual
 
-### Windows
+### PowerShell
 
-```bash
+```powershell
 venv\Scripts\activate
+```
+
+### CMD
+
+```cmd
+venv\Scripts\activate.bat
 ```
 
 ---
 
-## 5. Instalar Dependências
+## 5️⃣ Instalar Dependências
 
 ```bash
 pip install -r requirements.txt
@@ -156,22 +193,68 @@ pip install -r requirements.txt
 
 ---
 
-# Dependências do Projeto
-
-## requirements.txt
+# 📄 requirements.txt
 
 ```txt
-pandas
-numpy
-scikit-learn
 flask
+flask-cors
+openai
+python-dotenv
 ```
 
 ---
 
-# Treinamento da Inteligência Artificial
+# 🔑 Configurando API Key
 
-Entre na pasta backend:
+## Criar arquivo `.env`
+
+Dentro da pasta:
+
+```text
+backend/
+```
+
+Crie:
+
+```text
+.env
+```
+
+---
+
+## Adicionar chave OpenAI
+
+```env
+OPENAI_API_KEY=sua-chave-aqui
+```
+
+---
+
+# ⚠️ IMPORTANTE
+
+Nunca envie:
+- `.env`
+- API Keys
+
+para o GitHub.
+
+---
+
+# 🛡️ Configurar .gitignore
+
+```gitignore
+venv/
+.env
+__pycache__/
+```
+
+---
+
+# ▶️ Executando o Projeto
+
+## 1️⃣ Iniciar API Flask
+
+Entre em:
 
 ```bash
 cd backend
@@ -180,45 +263,51 @@ cd backend
 Execute:
 
 ```bash
-python train.py
-```
-
----
-
-# Resultado Esperado
-
-O terminal deverá exibir:
-
-```text
-Acurácia: 98.xx%
-```
-
-Além disso, serão gerados:
-
-```text
-model.pkl
-vectorizer.pkl
-```
-
----
-
-# Executando a API
-
-Dentro da pasta backend:
-
-```bash
 python app.py
 ```
 
-Servidor iniciado em:
+---
+
+## Resultado esperado
 
 ```text
-http://127.0.0.1:5000
+Running on http://127.0.0.1:5000
 ```
 
 ---
 
-# Exemplo de Requisição
+## 2️⃣ Abrir Front-end
+
+Abra:
+
+```text
+frontend/index.html
+```
+
+OU utilize:
+- Live Server (VSCode)
+
+---
+
+# 🧪 Testes
+
+## Exemplos de notícias
+
+```text
+Neymar foi convocado para a Copa do Mundo de 2026
+```
+
+```text
+Aliens invadiram Brasília nesta madrugada
+```
+
+```text
+Novo vírus transforma pessoas em zumbis
+```
+
+---
+
+# 📡 Exemplo de Requisição da API
 
 ## Endpoint
 
@@ -226,184 +315,163 @@ http://127.0.0.1:5000
 POST /predict
 ```
 
-## JSON Enviado
+---
+
+## JSON enviado
 
 ```json
 {
-  "text": "Texto da notícia aqui"
+  "text": "Donald Trump é presidente dos Estados Unidos"
 }
 ```
+
+---
 
 ## Resposta
 
 ```json
 {
-  "fake_probability": 87.5,
-  "true_probability": 12.5,
-  "result": "Fake News"
+  "result": "Provavelmente Real",
+  "fake_probability": 8,
+  "true_probability": 92,
+  "explanation": "A afirmação é consistente com acontecimentos políticos recentes."
 }
 ```
 
 ---
 
-# Inteligência Artificial Utilizada
-
-## TF-IDF
-
-Responsável por converter textos em dados numéricos.
-
----
-
-## Logistic Regression
-
-Modelo de Machine Learning utilizado para classificação das notícias.
-
----
-
-# Código de Treinamento da IA
-
-## train.py
+# 🧠 Exemplo do app.py
 
 ```python
-import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score
-import pickle
-
-# Ler datasets
-fake = pd.read_csv("../dataset/Fake.csv")
-true = pd.read_csv("../dataset/True.csv")
-
-# Criar labels
-fake["label"] = 0
-true["label"] = 1
-
-# Juntar dados
-data = pd.concat([fake, true])
-
-# Pegar texto e labels
-x = data["text"]
-y = data["label"]
-
-# Converter texto em números
-vectorizer = TfidfVectorizer(stop_words='english')
-
-x_vectorized = vectorizer.fit_transform(x)
-
-# Dividir treino e teste
-x_train, x_test, y_train, y_test = train_test_split(
-    x_vectorized,
-    y,
-    test_size=0.2,
-    random_state=42
+response = client.chat.completions.create(
+    model="gpt-4o",
+    messages=[
+        {
+            "role": "user",
+            "content": prompt
+        }
+    ],
+    temperature=0.3
 )
-
-# Criar IA
-model = LogisticRegression()
-
-# Treinar IA
-model.fit(x_train, y_train)
-
-# Testar IA
-predictions = model.predict(x_test)
-
-accuracy = accuracy_score(y_test, predictions)
-
-print(f"Acurácia: {accuracy * 100:.2f}%")
-
-# Salvar modelo
-pickle.dump(model, open("model.pkl", "wb"))
-pickle.dump(vectorizer, open("vectorizer.pkl", "wb"))
 ```
 
 ---
 
-# Código da API
+# 🎨 Melhorias Futuras
 
-## app.py
+## Interface
+- Dashboard futurista
+- Gráficos animados
+- Barras de progresso
+- Tema dark mode
 
-```python
-from flask import Flask, request, jsonify
-import pickle
-
-app = Flask(__name__)
-
-# Carregar modelo
-model = pickle.load(open("model.pkl", "rb"))
-vectorizer = pickle.load(open("vectorizer.pkl", "rb"))
-
-@app.route("/predict", methods=["POST"])
-def predict():
-
-    data = request.json
-    text = data["text"]
-
-    vectorized_text = vectorizer.transform([text])
-
-    prediction = model.predict(vectorized_text)[0]
-    probability = model.predict_proba(vectorized_text)[0]
-
-    fake_probability = probability[0] * 100
-    true_probability = probability[1] * 100
-
-    return jsonify({
-        "fake_probability": round(fake_probability, 2),
-        "true_probability": round(true_probability, 2),
-        "result": "Fake News" if prediction == 0 else "Notícia Real"
-    })
-
-if __name__ == "__main__":
-    app.run(debug=True)
-```
-
----
-
-# Possíveis Melhorias Futuras
-
-- Interface moderna com React ou Next.js
-- Dashboard com gráficos
+## Inteligência Artificial
+- Verificação em tempo real
 - Integração com APIs de notícias
-- Análise automática de links
-- Análise de imagens falsas
-- Integração com WhatsApp
-- Deploy em nuvem
-- Uso de modelos BERT/Transformers
+- Histórico de análises
+- Detecção de clickbait
+- Análise de sentimentos
+- Verificação de fontes confiáveis
+
+## Recursos Extras
+- Ranking de Fake News
+- Modo competição
+- Exportação PDF
+- Banco de dados
+- Login de usuários
 
 ---
 
-# Demonstração para Feira Científica
+# 🏆 Demonstração para Feira Científica
 
-O projeto pode ser demonstrado em tempo real:
+O sistema pode ser apresentado ao vivo:
 
-1. Usuário digita uma notícia
-2. Sistema analisa automaticamente
-3. IA exibe probabilidade de ser falsa
-
-Sugestão:
-- Comparar notícias reais e falsas ao vivo
-- Criar desafio para visitantes tentarem enganar a IA
+✅ Visitante digita notícia  
+✅ IA analisa em tempo real  
+✅ Sistema mostra probabilidade  
+✅ Explicação automática aparece na tela  
 
 ---
 
-# Conceitos Aplicados
+# 💡 Ideias para Impressionar na Feira
 
-- Machine Learning
-- Processamento de Linguagem Natural
-- APIs REST
-- Ciência de Dados
-- Desenvolvimento Web
+## 🎯 Desafio da Fake News
+Visitantes tentam criar notícias falsas para enganar a IA.
+
+---
+
+## 📊 Ranking
+Mostrar:
+- quem criou a fake news mais convincente
+- quem enganou a IA
+
+---
+
+## 🌐 Verificação Online
+Integrar:
+- G1
+- CNN
+- BBC
+- Reuters
+
+---
+
+# 📚 Conceitos Aplicados
+
 - Inteligência Artificial
+- IA Generativa
+- NLP
+- APIs REST
+- Desenvolvimento Web
+- Flask
+- Engenharia de Prompt
+- Front-end
+- Back-end
 
 ---
 
-# Autor
+# 👨‍💻 Autor
 
-Desenvolvido por Murilo Lopes para fins educacionais, aprendizado de Inteligência Artificial e apresentação em feira científica.
+Desenvolvido por **Murilo Lopes** para:
+- estudos
+- feiras científicas
+- apresentações tecnológicas
+- aprendizado em IA
 
 ---
 
-# Licença
+# 📜 Licença
 
-Este projeto é destinado para fins educacionais e acadêmicos.
+Este projeto possui fins:
+- educacionais
+- acadêmicos
+- demonstrativos
+
+---
+
+# ⭐ Considerações Finais
+
+Este projeto demonstra como Inteligência Artificial Generativa pode ser utilizada para:
+
+✅ análise textual  
+✅ interpretação contextual  
+✅ detecção de informações suspeitas  
+✅ desenvolvimento de sistemas inteligentes  
+
+Combinando:
+- IA
+- programação
+- APIs
+- desenvolvimento web
+
+em um único projeto moderno e inovador.
+
+---
+
+<div align="center">
+
+# 🚀 Fake News Detector AI
+
+### Inteligência Artificial aplicada à análise de notícias em tempo real
+
+</div>
